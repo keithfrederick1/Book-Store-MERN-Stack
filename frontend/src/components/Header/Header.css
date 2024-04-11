@@ -1,0 +1,19 @@
+.header-wrapper{
+   background-color:#FA8072;
+   color: white;
+}
+
+.header-container{
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color:aliceblue;
+}
+
+header-menu{
+    gap: 2rem;
+}
+
+.header-menu>*:hover{
+    cursor: pointer;
+}
