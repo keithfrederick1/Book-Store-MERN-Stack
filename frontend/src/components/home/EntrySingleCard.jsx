@@ -40,7 +40,7 @@ const EntrySingleCard = ({ entry }) => {
         </Link>
       </div>
       {showModal && (
-        <EntryModal book={entry} onClose={() => setShowModal(false)} />
+        <EntryModal entry={entry} onClose={() => setShowModal(false)} />
       )}
     </div>
   );
