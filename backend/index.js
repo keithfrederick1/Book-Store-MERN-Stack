@@ -1,7 +1,11 @@
 import express from 'express';
 import { PORT, mongoDBURL } from './config.js';
 import mongoose from 'mongoose';
-import entriesRoute from './routes/entiresRoute.js';
+import entriesRoute from './routes/entriesRoute.js';
+import medicationRoutes from './routes/medicationRoutes.js';
+import injectionRoutes from './routes/injectionRoutes.js';
+import adminRoutes from './routes/adminRoutes.js';
+import patientRoutes from './routes/patientRoutes.js';
 import cors from 'cors';
 
 const app = express();
@@ -27,6 +31,11 @@ app.get('/', (request, response) => {
 });
 
 app.use('/entries', entriesRoute);
+app.use('/medications', medicationRoutes);
+app.use('/injections', injectionRoutes);
+app.use('/admin', adminRoutes);
+app.use('/patients', patientRoutes);
+
 
 mongoose
   .connect(mongoDBURL)

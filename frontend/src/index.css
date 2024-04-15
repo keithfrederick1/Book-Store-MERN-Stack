@@ -5,7 +5,7 @@
 .flexCenter {
     display: flex;
     row-gap: 2rem;
-    justofy-content: center;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }

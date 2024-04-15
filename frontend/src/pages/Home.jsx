@@ -34,11 +34,9 @@ const Home = () => {
     <div className='p-4'>
       <Header />
       <Hero />
-      <div style={{ backgroundColor: '#cee7f0', height: '160px' }}>
+      <div style={{ backgroundColor: 'rgb(243, 227, 227);', height: '160px' }}>
       <div className='flex justify-center items-center gap-x-4'>
-      <h1 className='text-3xl my-8'>LongevityRx: Injectable Antipsychotic Directory</h1>
       </div>
-      <div className='flex justify-center items-center gap-x-4'>
         <button
           className='bg-sky-300 hover:bg-sky-600 px-4 py-1 rounded-lg'
           onClick={() => setShowType('table')}
@@ -51,17 +49,6 @@ const Home = () => {
         >
           Card
         </button>
-      </div>
-      </div>
-      <div style={{ marginTop:'20px', marginLeft: '40%' }}>
-        <input
-          className='bg-gray-100'
-          type="text"
-          placeholder="Search..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <button className='bg-sky-300 hover:bg-sky-600 px-4 py-1 rounded-lg'>Search</button>
       </div>
       <div className='flex justify-between items-center'>
         <h1 className='text-3xl my-8'>Entries</h1>

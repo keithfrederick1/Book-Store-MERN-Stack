@@ -3,11 +3,11 @@ import './Header.css';
 const Header = () => {
   return (
     <section className="header-wrapper">
-        <div className="flexCenter paddings innerWidth header-container">
+        <div className="flexStart paddings header-container">
             <img src="./longevity-logo.png" alt="logo" width={100}/>
 
 
-            <div className="header-menu">
+            <div className="innerWidth flexEnd header-menu">
                 <a href="">Our Value</a>
                 <a href="">Contact</a>
                 <a href="">Get Started</a>

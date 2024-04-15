@@ -4,7 +4,7 @@ import './Hero.css'
 const Hero = () => {
   return (
    <section className="hero-wrapper">
-        <div className="paddings innerWidth flexCenter hero-container ">
+        <div className="paddings innerWidth flexStart hero-container ">
             {/* left side */}
             <div className="hero-left">
                 <div className="hero-title">

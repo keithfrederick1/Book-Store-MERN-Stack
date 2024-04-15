@@ -1,24 +1,30 @@
 import express from 'express';
 import { Entry } from '../models/entryModel.js';
 
-const router = express.Router();
+const entryRouter = express.Router();
 
 // Route for Save a new Entry
-router.post('/', async (request, response) => {
+entryRouter.post('/', async (request, response) => {
   try {
     if (
+      !request.body.patientName ||
+      !request.body.patientDob ||
+      !request.body.mrn ||
       !request.body.medication ||
       !request.body.admin ||
-      !request.body.year
+      !request.body.date
     ) {
       return response.status(400).send({
-        message: 'Send all required fields: medication, admin, year',
+        message: 'Send all required fields: patient name, patient DOB, patient MRN, admin, date, medication',
       });
     }
     const newEntry = {
+      patientName: request.body.patientName,
+      patientDob: request.body.patientDob,
+      mrn: request.body.mrn,
       medication: request.body.medication,
       admin: request.body.admin,
-      year: request.body.year,
+      date: request.body.date,
 
     };
 
@@ -32,7 +38,7 @@ router.post('/', async (request, response) => {
 });
 
 // Route for Get All entries from database
-router.get('/', async (request, response) => {
+entryRouter.get('/', async (request, response) => {
   try {
     const entries = await Entry.find({});
 
@@ -47,7 +53,7 @@ router.get('/', async (request, response) => {
 });
 
 // Route for Get One Entry from database by id
-router.get('/:id', async (request, response) => {
+entryRouter.get('/:id', async (request, response) => {
   try {
     const { id } = request.params;
 
@@ -60,22 +66,9 @@ router.get('/:id', async (request, response) => {
   }
 });
 
-// Route for Get One Entry from database by MRN
-// router.get('/:mrn', async (request, response) => {
-//   try {
-//     const { mrn } = request.params;
-
-//     const entry = await Entry.findById(mrn);
-
-//     return response.status(200).json(entry);
-//   } catch (error) {
-//     console.log(error.message);
-//     response.status(500).send({ message: error.message });
-//   }
-// });
 
 // Route for Update a Entry
-router.put('/:id', async (request, response) => {
+entryRouter.put('/:id', async (request, response) => {
   try {
     if (
       !request.body.medication ||
@@ -103,7 +96,7 @@ router.put('/:id', async (request, response) => {
 });
 
 // Route for Delete a entry
-router.delete('/:id', async (request, response) => {
+entryRouter.delete('/:id', async (request, response) => {
   try {
     const { id } = request.params;
 
@@ -120,4 +113,4 @@ router.delete('/:id', async (request, response) => {
   }
 });
 
-export default router;
+export default entryRouter;
