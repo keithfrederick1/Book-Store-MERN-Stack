@@ -7,7 +7,8 @@ const entrySchema = mongoose.Schema(
       required: true
     },
     patientDob: {
-      type: Date,
+      // type: Date,
+      type: String,
       required: true
     },
     patientZip: {
@@ -27,7 +28,8 @@ const entrySchema = mongoose.Schema(
       required: true,
     },
     date: {
-      type: Date,
+      // type: Date,
+      type: String,
       required: true,
     },
     mrn: {
@@ -37,7 +39,7 @@ const entrySchema = mongoose.Schema(
     injection: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Injection',
-      required: true,
+      required: false,
     }
   },
   {
@@ -46,5 +48,3 @@ const entrySchema = mongoose.Schema(
 );
 
 export const Entry = mongoose.model('Entry', entrySchema);
-
-module.exports = Entry;

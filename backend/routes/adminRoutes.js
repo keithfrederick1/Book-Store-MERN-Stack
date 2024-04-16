@@ -12,7 +12,7 @@ adminRouter.post('/', async (request, response) => {
 
     ) {
       return response.status(400).send({
-        message: 'Send all required fields',
+        message: 'Send all required fields: name',
       });
     }
     const newAdmin = {

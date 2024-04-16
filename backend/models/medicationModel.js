@@ -12,5 +12,3 @@ const medicationSchema = new mongoose.Schema({
 });
 
 export const Medication = mongoose.model('Medication', medicationSchema);
-
-module.exports = medicationSchema;

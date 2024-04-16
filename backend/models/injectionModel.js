@@ -10,16 +10,19 @@ const injectionSchema = new mongoose.Schema({
         required: true
     },
     medication: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Medication',
+        // type: mongoose.Schema.Types.ObjectId,
+        // ref: 'Medication',
+        type: String,
         required: true,
     },
     dateAdministered: {
-        type: Date,
+        // type: Date,
+        type: String,
         required: true
     },
     nextInjection: {
-        type: Date,
+        // type: Date,
+        type: String,
         required: true
     },
     administeredArea: {
@@ -27,12 +30,11 @@ const injectionSchema = new mongoose.Schema({
         required: true
     },
     admin: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Admin',
+        // type: mongoose.Schema.Types.ObjectId,
+        // ref: 'Admin',
+        type: String,
         required: true
     }
 });
 
 export const Injection = mongoose.model('Injection', injectionSchema);
-
-module.exports = Injection;

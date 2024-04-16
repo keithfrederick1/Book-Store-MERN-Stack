@@ -1,5 +1,6 @@
 import express from 'express';
 import { Entry } from '../models/entryModel.js';
+import { Patient } from '../models/patientModel.js'
 
 const entryRouter = express.Router();
 
@@ -21,11 +22,12 @@ entryRouter.post('/', async (request, response) => {
     const newEntry = {
       patientName: request.body.patientName,
       patientDob: request.body.patientDob,
+      patientZip: request.body.patientZip,
       mrn: request.body.mrn,
       medication: request.body.medication,
       admin: request.body.admin,
       date: request.body.date,
-
+      injection: request.body.injection
     };
 
     const entry = await Entry.create(newEntry);
@@ -67,16 +69,19 @@ entryRouter.get('/:id', async (request, response) => {
 });
 
 
-// Route for Update a Entry
+// Route for Update an Entry
 entryRouter.put('/:id', async (request, response) => {
   try {
     if (
+      !request.body.patientName ||
+      !request.body.patientDob ||
+      !request.body.mrn ||
       !request.body.medication ||
       !request.body.admin ||
-      !request.body.year
+      !request.body.date
     ) {
       return response.status(400).send({
-        message: 'Send all required fields: medication, administrator, year',
+        message: 'Send all required fields: patient name, patient DOB, patient MRN, admin, date, medication',
       });
     }
 

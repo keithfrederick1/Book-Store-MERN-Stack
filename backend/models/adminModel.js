@@ -9,4 +9,3 @@ const adminSchema = new mongoose.Schema({
 
 export const Admin = mongoose.model('Admin', adminSchema);
 
-module.exports = adminSchema;
