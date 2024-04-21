@@ -8,16 +8,22 @@ const EntriesTable = ({ entries }) => {
     <table className='w-full border-separate border-spacing-2'>
       <thead>
         <tr>
-          <th className='border border-slate-600 rounded-md'>ID No</th>
+          {/* <th className='border border-slate-600 rounded-md'>ID No</th> */}
           <th className='border border-slate-600 rounded-md'>Medication</th>
           <th className='border border-slate-600 rounded-md max-md:hidden'>
             Admin
           </th>
           <th className='border border-slate-600 rounded-md max-md:hidden'>
-            Year
+           Date
           </th>
           <th className='border border-slate-600 rounded-md max-md:hidden'>
             MRN
+          </th>
+          <th className='border border-slate-600 rounded-md max-md:hidden'>
+            Patient Name
+          </th>
+          <th className='border border-slate-600 rounded-md max-md:hidden'>
+           Patient DOB
           </th>
           <th className='border border-slate-600 rounded-md'>Operations</th>
         </tr>
@@ -25,9 +31,6 @@ const EntriesTable = ({ entries }) => {
       <tbody>
         {entries.map((entry, index) => (
           <tr key={entry._id} className='h-8'>
-            <td className='border border-slate-700 rounded-md text-center'>
-              {index + 1}
-            </td>
             <td className='border border-slate-700 rounded-md text-center'>
               {entry.medication}
             </td>
@@ -39,6 +42,12 @@ const EntriesTable = ({ entries }) => {
             </td>
             <td className='border border-slate-700 rounded-md text-center max-md:hidden'>
               {entry.mrn}
+            </td>
+            <td className='border border-slate-700 rounded-md text-center max-md:hidden'>
+              {entry.patientName}
+            </td>
+            <td className='border border-slate-700 rounded-md text-center max-md:hidden'>
+              {entry.patientDob}
             </td>
             <td className='border border-slate-700 rounded-md text-center'>
               <div className='flex justify-center gap-x-4'>

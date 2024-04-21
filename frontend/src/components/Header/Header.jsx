@@ -5,17 +5,14 @@ const Header = () => {
     <section className="header-wrapper">
         <div className="flexStart paddings header-container">
             <img src="./longevity-logo.png" alt="logo" width={100}/>
-
-
             <div className="innerWidth flexEnd header-menu">
-                <a href="">Our Value</a>
-                <a href="">Contact</a>
-                <a href="">Get Started</a>
-                <a href="">Contact</a>
-                <button className="button">
-                    <a href="">Reach Out</a>
-                </button>
-                
+                <a href="">Patient Search</a>
+                <br/>
+                <a href="">Prescriptions</a>
+                <br/>
+                <a href="">Account</a>
+                <br/>
+                <a href="">Lisence Overview</a>
             </div>
         </div>
     </section>

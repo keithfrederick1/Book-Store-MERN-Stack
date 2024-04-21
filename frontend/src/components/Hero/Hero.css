@@ -1,8 +1,9 @@
 .hero-wrapper{
-    color: black;
+    color: white;
     position: relative;
     padding-bottom: 2rem;
-    background-color: rgb(243, 227, 227);
+    background-image: linear-gradient(to bottom right, rgb(2, 2, 67), rgb(111, 127, 232));
+
 }
 
 .hero-container{
@@ -29,11 +30,18 @@
     width: 30rem;
     height: 35rem;
     overflow: hidden;
-    border-radius: 15rem 15rem 0 0;
-    border: 8px solid rgba(255, 255, 255, 0.12);
+    border-radius: 3rem 15rem 0 3rem ;
+    border: 3px solid rgba(255, 255, 255, 0.12);
 }
 
 .image-container>img {
     width: 100%;
     height: 100%;
+}
+.hero-right {
+    background-image: '../../public/ds2.jpg';
+}
+
+.hero-description {
+    color: rgb(156, 175, 196);
 }

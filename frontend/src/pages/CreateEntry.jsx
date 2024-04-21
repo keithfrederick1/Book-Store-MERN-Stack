@@ -6,20 +6,25 @@ import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 
 const CreateEntry = () => {
+  const [patientDob, setPatientDob] = useState('');
+  const [patientName, setPatientName] = useState('');
   const [medication, setMedication] = useState('');
   const [admin, setAdmin] = useState('');
-  const [year, setYear] = useState('');
+  const [date, setDate] = useState('');
   const [mrn, setMrn] = useState('');
+
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
 
   const handleSaveEntry = () => {
     const data = {
-      medication,
-      admin,
-      year,
-      mrn
+     patientDob,
+     patientName,
+     mrn,
+     medication,
+     admin,
+     date
     };
     setLoading(true);
     axios
@@ -43,6 +48,24 @@ const CreateEntry = () => {
       <h1 className='text-3xl my-4'>Create Entry</h1>
       {loading ? <Spinner /> : ''}
       <div className='flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto'>
+      <div className='my-4'>
+          <label className='text-xl mr-4 text-gray-500'>Patient Name (Last first)</label>
+          <input
+            type='text'
+            value={patientName}
+            onChange={(e) => setPatientName(e.target.value)}
+            className='border-2 border-gray-500 px-4 py-2 w-full'
+          />
+        </div>
+        <div className='my-4'>
+          <label className='text-xl mr-4 text-gray-500'>Patient DOB</label>
+          <input
+            type='text'
+            value={patientDob}
+            onChange={(e) => setPatientDob(e.target.value)}
+            className='border-2 border-gray-500 px-4 py-2 w-full'
+          />
+        </div>
         <div className='my-4'>
           <label className='text-xl mr-4 text-gray-500'>Medication</label>
           <input
@@ -62,11 +85,11 @@ const CreateEntry = () => {
           />
         </div>
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Year</label>
+          <label className='text-xl mr-4 text-gray-500'>Date</label>
           <input
-            type='number'
-            value={year}
-            onChange={(e) => setYear(e.target.value)}
+            type='text'
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2  w-full '
           />
         </div>

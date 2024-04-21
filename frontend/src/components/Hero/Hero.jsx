@@ -1,5 +1,6 @@
 import React from 'react'
 import './Hero.css'
+import SearchBar from './Searchbar'
 
 const Hero = () => {
   return (
@@ -9,18 +10,20 @@ const Hero = () => {
             <div className="hero-left">
                 <div className="hero-title">
                     <h1 className="text-3xl my-8">LongevityRx <br/>
-                    Injectable Antipsychotic Directory</h1>
+                   Admin Portal</h1>
                 </div>
                 <div className="hero-description">
-                   <span>Online platform for long term injectable anti-psychotic medications</span> 
+                   <span>Features like medication history, controlled substance management, automatic interaction checks, ePAs, comprehensive reporting, and more! Gain direct entry to your state's Prescription Drug Monitoring Program (PDMP/PMP) for added convenience and oversight. Empowering Stability: Navigate Your Long-Term Journey with Ease</span> 
                    <br/>
-                   <div className="searchbar">Search Bar</div>
+                   <div className="searchbar">
+                   <SearchBar />
+                   </div>
                 </div>
             </div>
             {/* right side */}
             <div className="hero-right">
                 <div className="image-container">
-                    <img src="./longevity.png" alt=""/>
+                    <img src="./ds2.jpg" alt=""/>
                 </div>
             </div>
         </div>
