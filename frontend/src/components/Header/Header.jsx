@@ -1,5 +1,7 @@
 import React from 'react'
 import './Header.css';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
 const Header = () => {
   return (
     <section className="header-wrapper">
@@ -10,9 +12,7 @@ const Header = () => {
                 <br/>
                 <a href="">Prescriptions</a>
                 <br/>
-                <a href="">Account</a>
-                <br/>
-                <a href="">Lisence Overview</a>
+                <a href=""><AccountCircleIcon/>Account</a>
             </div>
         </div>
     </section>

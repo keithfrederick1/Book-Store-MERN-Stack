@@ -11,9 +11,10 @@ const Hero = () => {
                 <div className="hero-title">
                     <h1 className="text-3xl my-8">LongevityRx <br/>
                    Admin Portal</h1>
+                   <h2 className="text-3xl my-8">Welcome, USER NAME</h2>
                 </div>
                 <div className="hero-description">
-                   <span>Features like medication history, controlled substance management, automatic interaction checks, ePAs, comprehensive reporting, and more! Gain direct entry to your state's Prescription Drug Monitoring Program (PDMP/PMP) for added convenience and oversight. Empowering Stability: Navigate Your Long-Term Journey with Ease</span> 
+                   <span>Take advantage of features like medication history, controlled substance management, automatic interaction checks, ePAs, comprehensive reporting, and more! Gain direct entry to your state's Prescription Drug Monitoring Program (PDMP/PMP) for added convenience and oversight. Empowering Stability: Navigate Your Long-Term Journey with Ease</span> 
                    <br/>
                    <div className="searchbar">
                    <SearchBar />

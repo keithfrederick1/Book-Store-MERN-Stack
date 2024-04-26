@@ -10,10 +10,14 @@ import EntriesCard from '../components/home/EntriesCard';
 import  Hero  from '../components/Hero/Hero';
 import Header from '../components/Header/Header';
 import  Footer  from '../components/Footer';
-import PatientCard from '../components/home/PatientCard'
-import MedicationCard from '../components/home/MedicationCard';
+import PatientCard from '../components/home/PatientPanel'
+import MedicationCard from '../components/home/MedicationPanel';
 import AdminCard from '../components/home/AdminCard';
 import CardPanel from '../components/home/CardPanel';
+import PatientSearch from './PatientSearch';
+import PatientSingleCard from './PatientSingleCard';
+import PrescriptionSingleCard from './PrescriptionSingleCard';
+import CreatePrescription from './CreatePrescription';
 
 const Home = () => {
   const [entries, setEntries] = useState([]);
@@ -37,10 +41,14 @@ const Home = () => {
 
   return (
     <div className='p-4'>
-       <Header />
-      <Hero /> 
-      <CardPanel />
-      
+      <Header />
+     <Hero />  
+      <CardPanel /> 
+      {/* <PatientSearch /> */}
+      {/* <PatientSingleCard /> */}
+      {/* <PrescriptionSingleCard /> */}
+      {/* <CreatePrescription /> */}
+
       {/* <div style={{ backgroundColor: 'rgb(243, 227, 227);', height: '160px' }}>
       </div> */}
       {/* THIS IS ENTRIES TABLE  */}

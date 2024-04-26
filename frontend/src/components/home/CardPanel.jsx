@@ -1,6 +1,6 @@
 import React from 'react';
-import PatientCard from './PatientCard';
-import MedicationCard from './MedicationCard';
+import PatientCard from './PatientPanel';
+import MedicationCard from './MedicationPanel';
 import AdminCard from './AdminCard';
 import AnalyticsCard from './Analytics';
 
